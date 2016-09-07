@@ -3,6 +3,8 @@ package spark.template.thymeleaf;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.thymeleaf.dialect.IDialect ;
+
 import spark.ModelAndView;
 import spark.TemplateEngine;
 
@@ -86,5 +88,10 @@ public class ThymeleafTemplateEngine extends TemplateEngine
     }
 
     return processed ;
+  }
+
+  public void addThymeleafDialect(IDialect dialect)
+  {
+    engine.addDialect(dialect) ;
   }
 }
